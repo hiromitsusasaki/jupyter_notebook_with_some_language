@@ -1,0 +1,19 @@
+services:
+  jupyter_notebook:
+    container_name: jupyter_notebook
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    platform: linux/x86_64
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+    environment:
+      RUBYOPT: "-E utf-8"
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      GOOGLE_MAP_API_KEY: ${GOOGLE_MAP_API_KEY}
+    env_file:
+      - .env
+    security_opt:
+      - no-new-privileges:true
