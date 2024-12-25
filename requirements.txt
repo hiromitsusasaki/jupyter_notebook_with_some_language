@@ -1,0 +1,10 @@
+# 基本的なデータサイエンスパッケージ
+pandas
+numpy
+matplotlib
+scikit-learn
+
+# AI/LLM関連のSDK
+openai>=1.12.0
+anthropic>=0.18.1
+google-generativeai>=0.1.0
