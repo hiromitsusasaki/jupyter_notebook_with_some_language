@@ -16,7 +16,7 @@ This project provides a development environment where multiple programming langu
 ## Main Features
 
 - Jupyter Notebook kernels for each language
-- Pre-installed AI/LLM SDKs including OpenAI and Anthropic
+- Pre-installed AI/LLM SDKs including OpenAI, Anthropic, and Google's Generative AI
 
 ## Requirements
 
@@ -33,7 +33,7 @@ This project provides a development environment where multiple programming langu
    ```
 
 2. Google Cloud Authentication Setup:
-   Place `google-credentials.json` in the project root.
+   Place your Google Cloud credentials file as `credentials/google-credentials.json`.
 
 3. Launch Environment:
    ```bash
@@ -47,19 +47,25 @@ This project provides a development environment where multiple programming langu
 
 ```
 .
-├── docker/
-│ └── Dockerfile
-├── notebooks/
-│ ├── python.ipynb
-│ ├── javascript.ipynb
-│ ├── typescript.ipynb
-│ ├── ruby.ipynb
-│ └── go.ipynb
-├── docker-compose.yml
-├── requirements.txt
-├── package.json
-└── Gemfile
+├── .devcontainer/          # Dev Container configuration
+├── .github/                # GitHub related configurations
+├── credentials/            # Credential files (gitignored)
+├── notebooks/             # Jupyter notebooks directory (contents gitignored)
+├── docker/                # Docker related files
+├── Dockerfile             # Main Dockerfile
+├── docker-compose.yml     # Docker Compose configuration
+├── requirements.txt       # Python dependencies
+├── package.json          # Node.js dependencies
+└── Gemfile               # Ruby dependencies
 ```
+
+## Version Management
+
+The project includes version management files for each language:
+- `.python-version` - Python version
+- `.node-version` - Node.js version
+- `.ruby-version` - Ruby version
+- `.go-version` - Go version
 
 ## Main Installed Packages
 
@@ -68,8 +74,9 @@ This project provides a development environment where multiple programming langu
 - numpy
 - matplotlib
 - scikit-learn
-- openai
-- anthropic
+- openai (v1.12.0+)
+- anthropic (v0.18.1+)
+- google-generativeai (v0.1.0+)
 
 ### Node.js
 - openai
@@ -82,5 +89,6 @@ This project provides a development environment where multiple programming langu
 ## Security Notes
 
 - Properly manage environment variables and Google credentials
-- Containers are run with no-new-privileges option
-- Sensitive information is managed by `.gitignore`
+- All sensitive files are properly managed by `.gitignore`
+- Notebooks directory is included in git repository but its contents are ignored
+- Containers are run with security considerations
