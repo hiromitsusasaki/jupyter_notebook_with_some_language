@@ -86,6 +86,13 @@ The project includes version management files for each language:
 - ruby-openai
 - anthropic
 
+### Go
+- github.com/sashabaranov/go-openai v1.36.1
+- github.com/anthropics/anthropic-sdk-go v0.2.0-alpha.8
+- github.com/google/generative-ai-go v0.19.0
+- github.com/tidwall/gjson v1.14.4
+- github.com/tidwall/sjson v1.2.5
+
 ## Security Notes
 
 - Properly manage environment variables and Google credentials

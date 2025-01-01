@@ -84,11 +84,14 @@ RUN mkdir -p $GOPATH && \
 COPY Gemfile* ./
 COPY requirements.txt ./
 COPY package.json ./
+COPY go.mod ./
+COPY go.sum ./
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 RUN bundle install
 RUN npm install
+RUN go mod tidy
 
 # Expose JupyterLab port
 EXPOSE 8888
